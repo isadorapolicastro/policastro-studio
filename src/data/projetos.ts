@@ -23,7 +23,8 @@ export type Projeto = {
   meta?: string
   resumo?: string
   ficha?: [string, string][]
-  capa?: { simbolo: string; nome: string; assinatura: string; foto: Imagem }
+  miniatura?: string
+  capa?: { imagem: string; alt: string; foto: Imagem }
   secoes?: Secao[]
 }
 
@@ -45,10 +46,10 @@ export const projetos: Projeto[] = [
       ['Nosso papel', '[A confirmar]'],
       ['Formato', 'Cliente'],
     ],
+    miniatura: k('capa.webp'),
     capa: {
-      simbolo: k('kashi-simbolo-claro.svg'),
-      nome: k('kashi-nome-claro.svg'),
-      assinatura: 'Ayurveda & Yogaterapia',
+      imagem: k('capa.webp'),
+      alt: 'Capa do manual de uso de marca da Kashi: símbolo, nome, Ayurveda & Yogaterapia e a frase Um lugar de luz, cuidado e presença',
       foto: {
         src: k('pratica.webp'),
         alt: 'Prática de yoga na sala do Kashi, com tapetes verde-água e jardim ao fundo',

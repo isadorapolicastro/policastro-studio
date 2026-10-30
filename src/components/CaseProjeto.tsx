@@ -134,14 +134,7 @@ export default function CaseProjeto({ projeto }: { projeto: Projeto }) {
       )}
       {capa && (
         <div className="case-capa">
-          <div className="capa-marca">
-            <span className="mono capa-fig">Fig. 01 · Capa do manual</span>
-            <div className="capa-logo">
-              <img src={capa.simbolo} alt={`Símbolo da ${projeto.nome[0]}`} width={160} height={162} />
-              <img src={capa.nome} alt={projeto.nome[0]} className="capa-nome" />
-              <span className="mono capa-assinatura">{capa.assinatura}</span>
-            </div>
-          </div>
+          <img className="capa-manual" src={capa.imagem} alt={capa.alt} width={1176} height={1200} />
           <img className="capa-foto" src={capa.foto.src} alt={capa.foto.alt} loading="lazy" decoding="async" />
         </div>
       )}

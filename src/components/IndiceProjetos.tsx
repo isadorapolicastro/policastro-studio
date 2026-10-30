@@ -14,9 +14,10 @@ function Nome({ p }: { p: Projeto }) {
   )
 }
 
-function Miniatura({ p }: { p: Projeto }) {
-  if (!p.capa) return null
-  return <img className="indice-mini" src={p.capa.foto.src} alt="" aria-hidden="true" loading="lazy" />
+function Miniatura({ p, grande }: { p: Projeto; grande?: boolean }) {
+  const src = p.miniatura ?? p.capa?.foto.src
+  if (!src) return null
+  return <img className={`indice-mini${grande ? ' indice-mini--grande' : ''}`} src={src} alt="" aria-hidden="true" loading="lazy" />
 }
 
 /** Home: linhas reduzidas que levam para a página Projetos. */
@@ -28,7 +29,7 @@ export function IndiceHome() {
           <Link key={p.slug} to="/projetos" state={{ foco: p.slug }} className="indice-linha revela">
             <span className="indice-num mono">P—{p.numero}</span>
             <Nome p={p} />
-            <Miniatura p={p} />
+            <Miniatura p={p} grande />
             <span className="indice-meta mono suave">{p.linhaIndice}</span>
           </Link>
         ) : (
