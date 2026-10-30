@@ -1,0 +1,18 @@
+:root {
+  /* Paleta — proposta C (sem verde) */
+  --cor-vacuo: #0B0B0C;
+  --cor-sinal: #F2F2EE;
+  --cor-ultravioleta: #7B61FF;
+  --cor-nevoa: #C9BEFF;
+  --cor-noite: #2A2540;
+  --cor-ruido: #1E1E21;
+  --cor-linha: #3A3A3D;
+  --cor-texto-suave: #B9B9B4;
+
+  --fonte-display: 'Archivo', system-ui, sans-serif;
+  --fonte-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --margem: clamp(16px, 4vw, 56px);
+  --largura-max: 1440px;
+  --alvo-toque: 48px;
+}
