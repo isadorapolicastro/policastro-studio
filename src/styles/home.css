@@ -1,0 +1,50 @@
+.home-hero { padding: 40px 0 72px; display: flex; flex-direction: column; gap: 24px; }
+.marcador {
+  background: var(--cor-ruido);
+  border: 1px solid var(--cor-linha);
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;
+  padding: 16px;
+  font-family: var(--fonte-mono); font-size: 12px; color: var(--cor-texto-suave);
+}
+.marcador--violeta { background: var(--cor-noite); color: var(--cor-sinal); }
+.hero-canvas { height: 380px; }
+.hero-rodape { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: flex-end; }
+.hero-rodape p { margin: 0; max-width: 560px; font-size: 20px; line-height: 1.45; }
+
+.rotulo-secao { margin: 0; font-family: var(--fonte-mono); font-weight: 500; font-size: 14px; text-transform: uppercase; color: var(--cor-texto-suave); }
+
+.dupla { display: flex; flex-direction: column; gap: 32px; }
+.dupla-grade { display: flex; flex-wrap: wrap; gap: 4px; }
+.pessoa { flex: 1 1 420px; border: 1px solid var(--cor-linha); padding: 24px; display: flex; flex-direction: column; gap: 18px; }
+.pessoa .marcador { height: 420px; }
+.pessoa h3 { margin: 0; font-weight: 800; font-stretch: 115%; font-size: clamp(30px, 3.4vw, 48px); line-height: 0.9; text-transform: uppercase; letter-spacing: -0.03em; }
+.pessoa p { margin: 0; }
+
+.indice { display: flex; flex-direction: column; gap: 8px; }
+.indice .rotulo-secao { margin-bottom: 24px; }
+.indice-item { text-decoration: none; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--cor-linha); }
+.indice-item .nome { font-size: clamp(28px, 4.4vw, 64px); text-transform: uppercase; transition: font-stretch 0.4s ease, color 0.2s ease; }
+.indice-item .nome--pesado { font-weight: 800; font-stretch: 120%; letter-spacing: -0.03em; }
+.indice-item .nome--leve { font-weight: 200; font-stretch: 62%; }
+.indice-item:hover .nome { color: var(--cor-nevoa); }
+
+.servicos { display: flex; flex-direction: column; gap: 24px; }
+.servicos-grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 4px; }
+.servico { border: 1px solid var(--cor-linha); padding: 22px; min-height: 180px; display: flex; flex-direction: column; justify-content: space-between; }
+.servico .codigo { font-family: var(--fonte-mono); font-size: 12px; color: var(--cor-nevoa); }
+.servico .nome { font-weight: 700; font-size: 22px; line-height: 1.1; }
+
+.manifesto { padding: 96px 0; border-top: 1px solid var(--cor-linha); }
+.manifesto p { margin: 0; max-width: 1100px; font-weight: 300; font-stretch: 85%; font-size: clamp(30px, 4.2vw, 64px); line-height: 1.02; text-transform: uppercase; letter-spacing: -0.02em; }
+.manifesto strong { color: var(--cor-ultravioleta); font-weight: 700; }
+
+.contato { display: flex; flex-direction: column; gap: 28px; }
+.contato h2 { margin: 0; font-weight: 850; font-stretch: 125%; font-size: clamp(52px, 11vw, 176px); line-height: 0.82; letter-spacing: -0.05em; text-transform: uppercase; }
+.contato h2 span { color: var(--cor-ultravioleta); }
+.contato-botoes { display: flex; flex-wrap: wrap; gap: 4px; font-family: var(--fonte-mono); font-size: 14px; text-transform: uppercase; }
+.contato-botoes a { display: inline-flex; align-items: center; min-height: 56px; padding: 0 24px; text-decoration: none; }
+.contato-botoes .cheio { background: var(--cor-sinal); color: var(--cor-vacuo); }
+.contato-botoes .cheio:hover { background: var(--cor-nevoa); color: var(--cor-vacuo); }
+.contato-botoes .vazado { border: 1px solid var(--cor-sinal); }
+
+.relogio { color: var(--cor-texto-suave); }

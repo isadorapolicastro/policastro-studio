@@ -1,4 +1,21 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
+function horaGravatai() {
+  return new Intl.DateTimeFormat('pt-BR', {
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZone: 'America/Sao_Paulo',
+  }).format(new Date())
+}
+
+function Relogio() {
+  const [hora, setHora] = useState(horaGravatai)
+  useEffect(() => {
+    const id = window.setInterval(() => setHora(horaGravatai()), 15000)
+    return () => window.clearInterval(id)
+  }, [])
+  return <span className="relogio">Gravataí {hora} · GMT−3</span>
+}
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 
 const links = [
@@ -22,6 +39,7 @@ export default function Layout() {
           <Link to="/" className="marca" aria-label="POLICASTROSTUDIO, página inicial">
             Policastro<span>Studio</span>
           </Link>
+          <Relogio />
           <nav aria-label="Principal" className="menu">
             {links.map((l) => (
               <NavLink key={l.to} to={l.to}>{l.rotulo}</NavLink>
@@ -33,7 +51,7 @@ export default function Layout() {
         </main>
         <footer className="rodape mono suave">
           <span>POLICASTROSTUDIO — Estúdio de design em Gravataí, RS</span>
-          <span>Versão em construção</span>
+          <span>Instagram [a confirmar]</span>
         </footer>
       </div>
     </>
