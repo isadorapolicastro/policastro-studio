@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import '../styles/home.css'
+import '../styles/projetos.css'
+import { IndiceHome } from '../components/IndiceProjetos'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -21,11 +23,6 @@ const pessoas = [
   },
 ]
 
-const projetos = [
-  { nome: '[Projeto real 01]', meta: 'Branding · Website · [Ano]', estilo: 'nome nome--pesado' },
-  { nome: '[Projeto real 02]', meta: 'Identidade visual · [Ano]', estilo: 'nome nome--leve' },
-  { nome: '[Projeto real 03]', meta: 'Landing page · Campanha · [Ano]', estilo: 'nome nome--pesado' },
-]
 
 const servicos = [
   'Branding e identidade visual',
@@ -86,14 +83,12 @@ export default function Inicio() {
         </div>
       </section>
 
-      <section className="secao indice" aria-labelledby="indice-projetos">
-        <h2 id="indice-projetos" className="rotulo-secao">// Índice de projetos</h2>
-        {projetos.map((p) => (
-          <Link key={p.nome} to="/projetos" className="indice-item revela">
-            <span className={p.estilo}>{p.nome}</span>
-            <span className="mono suave">{p.meta}</span>
-          </Link>
-        ))}
+      <section className="secao" aria-labelledby="indice-projetos">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 16, marginBottom: 24 }}>
+          <h2 id="indice-projetos" className="rotulo-secao">// Índice de projetos</h2>
+          <Link to="/projetos" className="mono" style={{ padding: '12px 0' }}>Ver todos →</Link>
+        </div>
+        <IndiceHome />
       </section>
 
       <section className="secao servicos" aria-labelledby="servicos-titulo">

@@ -1,0 +1,79 @@
+/* Índice de projetos (home e página Projetos) */
+.indice-lista { display: flex; flex-direction: column; }
+.indice-linha {
+  all: unset; box-sizing: border-box; cursor: pointer; width: 100%;
+  display: grid; grid-template-columns: 72px minmax(0, 1fr) auto auto; align-items: center; gap: 24px;
+  padding: 22px 0; border-bottom: 1px solid var(--cor-linha); text-decoration: none; color: inherit;
+}
+.indice-linha:focus-visible { outline: 2px solid var(--cor-nevoa); outline-offset: 4px; }
+.indice-linha--off { cursor: default; opacity: 0.55; grid-template-columns: 72px minmax(0, 1fr) auto; }
+.indice-num { color: var(--cor-nevoa); }
+.indice-nome { font-weight: 800; font-stretch: 120%; font-size: clamp(28px, 4.4vw, 64px); line-height: 0.95; text-transform: uppercase; letter-spacing: -0.03em; transition: color 0.2s ease; }
+.indice-nome .leve { font-weight: 200; font-stretch: 62%; color: var(--cor-nevoa); }
+.indice-mini { width: 120px; height: 72px; object-fit: cover; filter: grayscale(1) contrast(1.05); transition: filter 0.3s ease, transform 0.3s ease; }
+.indice-meta { display: flex; align-items: center; gap: 16px; text-align: right; }
+.indice-sinal { font-size: 28px; line-height: 1; color: var(--cor-ultravioleta); width: 20px; text-align: center; }
+a.indice-linha:hover .indice-nome, button.indice-linha:hover .indice-nome { color: var(--cor-nevoa); }
+a.indice-linha:hover .indice-mini, button.indice-linha:hover .indice-mini { filter: none; transform: scale(1.04); }
+@media (max-width: 720px) {
+  .indice-linha { grid-template-columns: 48px minmax(0, 1fr); gap: 8px 16px; }
+  .indice-mini { display: none; }
+  .indice-meta { grid-column: 2; justify-content: space-between; text-align: left; }
+}
+
+.pagina-projetos { padding: 56px 0 96px; display: flex; flex-direction: column; gap: 20px; }
+.titulo-pagina { font-size: clamp(56px, 12vw, 180px); }
+.pagina-intro { margin: 0 0 24px; color: var(--cor-texto-suave); }
+.projeto { scroll-margin-top: 16px; }
+.projeto--foco .indice-linha { background: linear-gradient(90deg, rgba(123, 97, 255, 0.16), transparent 60%); }
+.projeto-cabeca { margin: 0; font: inherit; }
+.projeto--aberto > .projeto-cabeca .indice-linha { border-bottom-color: var(--cor-ultravioleta); }
+.projeto-painel { overflow: hidden; }
+.botao-fechar { all: unset; cursor: pointer; display: inline-flex; align-items: center; min-height: 56px; margin: 8px 0 48px; color: var(--cor-nevoa); }
+.botao-fechar:focus-visible { outline: 2px solid var(--cor-nevoa); outline-offset: 3px; }
+
+/* Case */
+.case { display: flex; flex-direction: column; gap: 24px; padding: 32px 0 24px; }
+.case-meta { margin: 0; }
+.case-resumo { margin: 0; max-width: 820px; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.25; }
+.ficha { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 4px; }
+.ficha > div { border: 1px solid var(--cor-linha); padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+.ficha dt { color: var(--cor-texto-suave); }
+.ficha dd { margin: 0; }
+
+.case-capa { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 16px; }
+.capa-marca { flex: 999 1 560px; min-height: 620px; background: #1E5556; padding: clamp(28px, 4vw, 64px); display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
+.capa-fig { color: #F2B696; }
+.capa-logo { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+.capa-nome { width: 400px; max-width: 100%; height: auto; }
+.capa-assinatura { letter-spacing: 0.2em; color: #F2B696; }
+.capa-foto { flex: 1 1 320px; min-width: 0; height: 620px; object-fit: cover; }
+
+.case-secao { padding: 64px 0 8px; border-top: 1px solid var(--cor-linha); display: flex; flex-direction: column; gap: 18px; }
+.case-secao--estreita { max-width: 900px; border-top: 0; }
+.case-titulo { margin: 0; font-weight: 800; font-stretch: 115%; font-size: clamp(32px, 4vw, 56px); line-height: 0.95; text-transform: uppercase; letter-spacing: -0.03em; }
+.acento { color: var(--cor-ultravioleta); }
+.case-texto { margin: 0; font-size: 20px; line-height: 1.55; color: #D6D6D2; }
+.case-citacao { margin: 0; font-weight: 300; font-stretch: 85%; font-size: clamp(40px, 6vw, 96px); line-height: 0.95; text-transform: uppercase; letter-spacing: -0.03em; }
+.case-citacao .acento { font-weight: 700; }
+.etiquetas { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+.etiquetas li { border: 1px solid var(--cor-linha); padding: 12px 18px; }
+.etapas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 4px; }
+.etapas li { border: 1px solid var(--cor-linha); padding: 24px; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
+.etapas li.ultima { border-color: var(--cor-ultravioleta); }
+.etapas .codigo { font-family: var(--fonte-mono); font-size: 12px; color: var(--cor-nevoa); }
+.etapas strong { display: block; font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+.etapa-texto { display: block; font-size: 17px; line-height: 1.45; color: #D6D6D2; }
+
+.grupo { display: flex; flex-direction: column; gap: 4px; }
+.grupo-titulo { margin: 24px 0 8px; color: var(--cor-nevoa); }
+.linha-galeria { display: flex; flex-wrap: wrap; gap: 4px; }
+.fig { margin: 0 0 12px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.fig img { display: block; width: 100%; object-fit: cover; }
+.paleta { height: 320px; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.padrao { display: block; width: 100%; height: 320px; background: #F2B696; }
+@media (max-width: 720px) {
+  .fig img { height: auto !important; max-height: 70vh; }
+  .capa-marca, .capa-foto { min-height: 0; height: auto; }
+  .capa-foto { aspect-ratio: 4 / 5; }
+}

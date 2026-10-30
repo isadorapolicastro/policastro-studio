@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function horaGravatai() {
   return new Intl.DateTimeFormat('pt-BR', {
@@ -27,8 +27,11 @@ const links = [
 
 export default function Layout() {
   const { pathname } = useLocation()
+  const anterior = useRef(pathname)
   useEffect(() => {
-    window.scrollTo(0, 0)
+    const dentroDeProjetos = anterior.current.startsWith('/projetos') && pathname.startsWith('/projetos')
+    anterior.current = pathname
+    if (!dentroDeProjetos) window.scrollTo(0, 0)
   }, [pathname])
 
   return (
