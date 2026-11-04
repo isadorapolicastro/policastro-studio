@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import type { ItemGaleria, Projeto, Secao } from '../data/projetos'
 
 const KashiMotion = lazy(() => import('./KashiMotion'))
+const OlynMotion = lazy(() => import('./OlynMotion'))
 
 function Item({ item }: { item: ItemGaleria }) {
   if (item.tipo === 'imagem') {
@@ -115,7 +116,7 @@ function Bloco({ secao }: { secao: Secao }) {
           </h3>
           <p className="case-texto" style={{ maxWidth: 820 }}>{secao.texto}</p>
           <Suspense fallback={<div style={{ aspectRatio: '16 / 9', background: '#0B0B0C' }} />}>
-            <KashiMotion />
+            {secao.animacao === 'olyn' ? <OlynMotion /> : <KashiMotion />}
           </Suspense>
         </section>
       )

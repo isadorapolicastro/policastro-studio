@@ -1,0 +1,58 @@
+.om { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.om-caixa { position: relative; width: 100%; overflow: hidden; background: #061321; border: 1px solid var(--cor-linha); }
+.om-palco {
+  position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; overflow: hidden;
+  background: radial-gradient(90% 80% at 85% 15%, #13263B 0%, #061321 60%);
+  color: #FFFFFF; font-family: 'Manrope Variable', 'Manrope', Arial, sans-serif;
+}
+.om-grade { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 120px 120px; }
+.om-cena { position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; gap: 80px; padding: 0 140px; }
+.om-centro { flex-direction: column; justify-content: center; }
+.om-final-layout { gap: 40px; justify-content: flex-start; padding-top: 500px; }
+
+.om-titulo-grupo { position: relative; flex: 1 1 0; min-width: 0; }
+.om-titulo { margin: 0; font-weight: 800; font-size: 128px; line-height: 0.95; letter-spacing: -0.045em; text-transform: uppercase; }
+.om-titulo--menor { font-size: 104px; }
+.om-titulo--assinatura { font-size: 72px; text-align: center; letter-spacing: -0.03em; }
+.om-eco { position: absolute; inset: 0; color: #F75A05; pointer-events: none; }
+.om-eco .om-destaque { color: #F75A05; background: none; -webkit-text-fill-color: currentColor; }
+.om-palavra { display: inline-block; overflow: hidden; vertical-align: top; white-space: nowrap; padding: 0 0.04em 0.08em 0; margin-right: 0.22em; }
+.om-int { display: inline-block; will-change: transform; }
+.om-destaque { background: linear-gradient(110deg, #FF6A00 0%, #F33417 47%, #D31644 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+.om-ui-area { position: relative; flex: 0 0 auto; }
+.om-ui, .om-ui-eco { will-change: transform, opacity, filter; }
+.om-ui-area .om-ui-eco { position: absolute; inset: 0; border: 2px solid #F75A05; opacity: 0; background: none; box-shadow: none; padding: 0; }
+
+.om-celular { width: 420px; height: 860px; border-radius: 56px; background: #0B1B2B; padding: 14px; box-sizing: border-box; box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
+.om-celular img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 44px; }
+
+.om-cartao { width: 720px; border-radius: 22px; background: #0B1B2B; border: 1px solid rgba(255,255,255,0.14); padding: 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px; }
+.om-cartao-rotulo { font-family: 'DM Mono', ui-monospace, monospace; font-size: 22px; letter-spacing: 0.14em; text-transform: uppercase; color: #F75A05; }
+.om-cartao-titulo { font-weight: 800; font-size: 76px; letter-spacing: -0.04em; }
+.om-cartao-sub { font-family: 'DM Mono', ui-monospace, monospace; font-size: 22px; color: #A9B2BD; text-transform: uppercase; letter-spacing: 0.06em; }
+.om-vagas { display: flex; gap: 18px; margin: 12px 0; }
+.om-vaga { width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(110deg, #FF6A00, #D31644); }
+
+.om-foto { width: 520px; height: 860px; border-radius: 22px; overflow: hidden; }
+.om-foto img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.om-navegador { width: 900px; height: 600px; border-radius: 16px; overflow: hidden; background: #061321; box-shadow: 0 40px 80px rgba(0,0,0,0.5); display: flex; flex-direction: column; }
+.om-barra { height: 44px; flex: 0 0 auto; display: flex; align-items: center; gap: 10px; padding: 0 18px; background: #0B1B2B; }
+.om-barra i { width: 12px; height: 12px; border-radius: 50%; background: #3A4654; }
+.om-barra span { margin-left: 16px; padding: 4px 18px; border-radius: 999px; background: #061321; font-family: 'DM Mono', ui-monospace, monospace; font-size: 16px; color: #A9B2BD; }
+.om-navegador img { display: block; width: 100%; flex: 1; min-height: 0; object-fit: cover; object-position: top; }
+
+.om-cta-area { width: 720px; border-radius: 22px; background: linear-gradient(110deg, #FF6A00 0%, #F33417 47%, #D31644 100%); padding: 64px 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px; }
+.om-cta-area .om-cartao-rotulo, .om-cta-area .om-cartao-sub { color: #FFFFFF; }
+.om-cta { align-self: flex-start; display: inline-flex; gap: 16px; align-items: center; background: #FFFFFF; color: #061321; font-weight: 800; font-size: 34px; text-transform: uppercase; letter-spacing: -0.01em; padding: 26px 34px; }
+
+.om-icone { position: relative; width: 300px; height: auto; }
+.om-brilho { position: absolute; left: 50%; top: 50%; width: 760px; height: 760px; margin: -380px 0 0 -380px; border-radius: 50%; background: radial-gradient(circle, rgba(247,90,5,0.45) 0%, rgba(211,22,68,0.18) 40%, transparent 70%); }
+.om-chama { position: relative; width: 340px; height: 548px; }
+.om-fatia { position: absolute; inset: 0; width: 100%; height: 100%; }
+.om-logo { width: 760px; height: auto; }
+
+.om-controles { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+.om-controles button { all: unset; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; color: var(--cor-nevoa); }
+.om-controles button:focus-visible { outline: 2px solid var(--cor-nevoa); outline-offset: 3px; }
