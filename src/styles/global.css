@@ -23,7 +23,9 @@ a:hover { color: var(--cor-nevoa); }
 
 .topo { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--cor-linha); }
 .marca { text-decoration: none; font-weight: 850; font-stretch: 125%; font-size: 20px; letter-spacing: -0.02em; text-transform: uppercase; }
-.marca span { color: var(--cor-ultravioleta); font-weight: 300; font-stretch: 62%; }
+.marca { display: inline-flex; align-items: center; gap: 12px; font-family: var(--fonte-display); }
+.marca-nome span { color: var(--cor-ultravioleta); font-weight: 300; font-stretch: 62%; }
+.rodape-marca { display: inline-flex; align-items: center; gap: 10px; }
 .menu { display: flex; flex-wrap: wrap; gap: 20px; }
 .menu a { text-decoration: none; display: inline-flex; align-items: center; min-height: var(--alvo-toque); }
 .menu a[aria-current='page'] { color: var(--cor-nevoa); }

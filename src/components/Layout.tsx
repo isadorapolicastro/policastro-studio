@@ -17,6 +17,7 @@ function Relogio() {
   return <span className="relogio">Gravataí {hora} · GMT−3</span>
 }
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
+import Simbolo from './Simbolo'
 
 const links = [
   { to: '/projetos', rotulo: '[01] Projetos' },
@@ -40,7 +41,8 @@ export default function Layout() {
       <div className="container">
         <header className="topo mono">
           <Link to="/" className="marca" aria-label="POLICASTROSTUDIO, página inicial">
-            Policastro<span>Studio</span>
+            <Simbolo altura={30} />
+            <span className="marca-nome">Policastro<span>Studio</span></span>
           </Link>
           <Relogio />
           <nav aria-label="Principal" className="menu">
@@ -53,7 +55,7 @@ export default function Layout() {
           <Outlet />
         </main>
         <footer className="rodape mono suave">
-          <span>POLICASTROSTUDIO — Estúdio de design em Gravataí, RS</span>
+          <span className="rodape-marca"><Simbolo altura={20} /> POLICASTROSTUDIO — Estúdio de design em Gravataí, RS</span>
           <span>Instagram [a confirmar]</span>
         </footer>
       </div>
