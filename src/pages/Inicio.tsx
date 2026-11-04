@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react'
+import { lazy, Suspense, useLayoutEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -7,6 +7,8 @@ import '../styles/projetos.css'
 import { IndiceHome } from '../components/IndiceProjetos'
 
 gsap.registerPlugin(ScrollTrigger)
+
+const ShowreelEstudio = lazy(() => import('../components/ShowreelEstudio'))
 
 const pessoas = [
   {
@@ -56,9 +58,10 @@ export default function Inicio() {
   return (
     <div ref={raiz}>
       <section className="home-hero" aria-labelledby="titulo-inicio">
-        <div className="marcador hero-canvas entra">
-          <span>[ Canvas WebGL · campo de ruído que reage ao cursor · imagem estática no fallback ]</span>
-          <span aria-hidden="true">Role ↓</span>
+        <div className="entra">
+          <Suspense fallback={<div style={{ aspectRatio: '16 / 9', background: '#1E1E21' }} />}>
+            <ShowreelEstudio />
+          </Suspense>
         </div>
         <h1 id="titulo-inicio" className="titulo-hero">
           <span className="linha-titulo"><span>Marca, <span className="leve">interface</span></span></span>

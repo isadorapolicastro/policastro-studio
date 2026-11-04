@@ -13,6 +13,7 @@ export type Secao =
   | { tipo: 'etapas'; rotulo: string; titulo: string; etapas: { titulo: string; texto: string }[] }
   | { tipo: 'galeria'; rotulo: string; titulo: string; destaque: string; grupos: { titulo: string; linhas: ItemGaleria[][] }[] }
   | { tipo: 'entregas'; rotulo: string; titulo: string; itens: string[] }
+  | { tipo: 'apresentacao'; rotulo: string; titulo: string; destaque: string; texto: string }
 
 export type Projeto = {
   slug: string
@@ -66,6 +67,13 @@ export const projetos: Projeto[] = [
         destaque: 'sempre foi.',
         texto:
           'O espaço que nasceu como Leila Policastro ganhou o nome Kashi — o nome antigo de Varanasi, na Índia, às margens do Ganges, um dos berços do Yoga e do Ayurveda. A marca precisava dizer isso falando baixo e acolhendo.',
+      },
+      {
+        tipo: 'apresentacao',
+        rotulo: 'Apresentação',
+        titulo: 'A marca em',
+        destaque: 'movimento',
+        texto: 'Trinta segundos com as frases do próprio espaço: do símbolo que se acende às peças do dia a dia, até o sol, o rio e as folhas se juntarem para formar o logo.',
       },
       {
         tipo: 'citacao',

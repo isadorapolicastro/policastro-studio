@@ -1,4 +1,7 @@
+import { lazy, Suspense } from 'react'
 import type { ItemGaleria, Projeto, Secao } from '../data/projetos'
+
+const KashiMotion = lazy(() => import('./KashiMotion'))
 
 function Item({ item }: { item: ItemGaleria }) {
   if (item.tipo === 'imagem') {
@@ -101,6 +104,19 @@ function Bloco({ secao }: { secao: Secao }) {
               ))}
             </div>
           ))}
+        </section>
+      )
+    case 'apresentacao':
+      return (
+        <section className="case-secao">
+          <p className="rotulo-secao">// {secao.rotulo}</p>
+          <h3 className="case-titulo">
+            {secao.titulo} <span className="acento">{secao.destaque}</span>
+          </h3>
+          <p className="case-texto" style={{ maxWidth: 820 }}>{secao.texto}</p>
+          <Suspense fallback={<div style={{ aspectRatio: '16 / 9', background: '#0B0B0C' }} />}>
+            <KashiMotion />
+          </Suspense>
         </section>
       )
     case 'entregas':
