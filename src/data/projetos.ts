@@ -134,6 +134,14 @@ export const projetos: Projeto[] = [
             ],
           },
           {
+            titulo: '06 · Papelaria',
+            linhas: [
+              [
+                { tipo: 'imagem', src: k('papelaria.webp'), alt: 'Papelaria da Kashi: cartão de visita em petróleo e areia, vale-presente terracota e cartão de frequência Minhas práticas', legenda: 'Cartão de visita, vale-presente e cartão de frequência', altura: 768, flex: '1 1 480px' },
+              ],
+            ],
+          },
+          {
             titulo: '07 · Objetos do espaço',
             linhas: [
               [
@@ -151,11 +159,8 @@ export const projetos: Projeto[] = [
             titulo: '08 · Fachada e sinalização',
             linhas: [
               [
-                { tipo: 'imagem', src: k('fachada.webp'), alt: 'Fachada da casa com a placa em arco da Kashi no poste', legenda: 'Símbolo na fachada', altura: 620, flex: '3 1 420px', posicao: '50% 45%' },
-                { tipo: 'imagem', src: k('placa.webp'), alt: 'Placa em arco e cartão de horários da Kashi', legenda: 'Placa em arco e horários', altura: 620, flex: '2 1 320px' },
-              ],
-              [
-                { tipo: 'imagem', src: k('porta.webp'), alt: 'Porta de vidro da entrada com a placa da Kashi', legenda: 'Placa na porta do corredor', altura: 460, flex: '1 1 420px' },
+                { tipo: 'imagem', src: k('fachada.webp'), alt: 'Fachada da casa com a placa em arco da Kashi no poste', legenda: 'Símbolo na fachada', altura: 620, flex: '1 1 420px', posicao: '50% 45%' },
+                { tipo: 'imagem', src: k('porta.webp'), alt: 'Porta de vidro da entrada com a placa da Kashi', legenda: 'Placa na porta do corredor', altura: 620, flex: '1 1 420px' },
               ],
             ],
           },
