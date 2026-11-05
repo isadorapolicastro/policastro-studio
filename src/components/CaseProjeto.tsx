@@ -150,10 +150,16 @@ export default function CaseProjeto({ projeto }: { projeto: Projeto }) {
         </dl>
       )}
       {capa && (
-        <div className="case-capa">
-          <img className="capa-manual" src={capa.imagem} alt={capa.alt} width={1176} height={1200} />
-          <img className="capa-foto" src={capa.foto.src} alt={capa.foto.alt} loading="lazy" decoding="async" />
-        </div>
+        capa.foto ? (
+          <div className="case-capa">
+            <img className="capa-manual" src={capa.imagem} alt={capa.alt} width={1176} height={1200} />
+            <img className="capa-foto" src={capa.foto.src} alt={capa.foto.alt} loading="lazy" decoding="async" />
+          </div>
+        ) : (
+          <div className="case-capa case-capa--solo">
+            <img src={capa.imagem} alt={capa.alt} width={1960} height={2000} />
+          </div>
+        )
       )}
       {projeto.secoes?.map((s, i) => <Bloco key={i} secao={s} />)}
     </div>
