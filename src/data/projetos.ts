@@ -54,6 +54,7 @@ export const projetos: Projeto[] = [
     capa: {
       imagem: k('capa.webp'),
       alt: 'Capa do manual de uso de marca da Kashi: símbolo, nome, Ayurveda & Yogaterapia e a frase Um lugar de luz, cuidado e presença',
+      foto: { src: k('pratica-alta.webp'), alt: 'Prática de yoga na sala do Kashi: mulher em postura do guerreiro sobre tapete verde-água, com jardim ao fundo', legenda: '', altura: 760, flex: '1 1 320px' },
     },
     secoes: [
       {
