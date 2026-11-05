@@ -1,0 +1,37 @@
+.ig { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.ig-caixa { position: relative; width: 100%; overflow: hidden; background: #0B0B0C; border: 1px solid var(--cor-linha); }
+.ig-palco {
+  position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; overflow: hidden;
+  background: radial-gradient(60% 60% at 50% 50%, #15131F 0%, #0B0B0C 70%);
+  color: #F2F2EE; font-family: var(--fonte-display);
+}
+.ig-camada { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ig-simbolo-area { position: absolute; left: 50%; top: 50%; width: 492px; height: 520px; margin: -260px 0 0 -246px; }
+.ig-simbolo { display: block; width: 100%; height: 100%; overflow: visible; }
+
+.ig-digitar { position: absolute; left: 640px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; font-weight: 900; font-stretch: 62%; font-size: 270px; line-height: 1; text-transform: uppercase; letter-spacing: -0.01em; }
+.ig-palavra { display: inline-flex; }
+.ig-palavra-1 { color: #7B61FF; }
+.ig-cursor { display: inline-block; width: 30px; height: 210px; margin-left: 14px; background: #7B61FF; }
+
+.ig-nomes { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 40px; padding: 0 180px; }
+.ig-titulo-nomes { margin: 0 0 12px; font-family: var(--fonte-mono); font-size: 30px; text-transform: uppercase; letter-spacing: 0.06em; color: #C9BEFF; }
+.ig-pessoa { display: flex; flex-direction: column; gap: 14px; }
+.ig-nome-linha { margin: 0; display: flex; align-items: flex-end; gap: 10px; font-weight: 850; font-stretch: 125%; font-size: 170px; line-height: 0.8; letter-spacing: -0.045em; text-transform: uppercase; }
+.ig-inicial-i { display: inline-block; width: 30px; height: 120px; background: #7B61FF; flex: 0 0 auto; }
+.ig-inicial-g { width: 120px; height: 120px; flex: 0 0 auto; overflow: visible; }
+.ig-mascara { display: inline-block; overflow: hidden; padding-right: 0.05em; }
+.ig-resto { display: inline-block; }
+.ig-area { font-family: var(--fonte-mono); font-size: 26px; text-transform: uppercase; letter-spacing: 0.05em; color: #B9B9B4; padding-left: 4px; }
+
+.ig-assinatura { position: absolute; left: 720px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 36px; }
+.ig-nome { margin: 0; text-transform: uppercase; line-height: 0.88; }
+.ig-linha { display: block; overflow: hidden; padding-bottom: 0.04em; }
+.ig-linha-int { display: inline-block; }
+.ig-nome .ig-linha:first-child .ig-linha-int { font-weight: 850; font-stretch: 125%; font-size: 124px; letter-spacing: -0.05em; }
+.ig-leve { font-weight: 200; font-stretch: 62%; font-size: 124px; color: #7B61FF; letter-spacing: 0.01em; }
+.ig-rodape { margin: 0; font-family: var(--fonte-mono); font-size: 26px; text-transform: uppercase; letter-spacing: 0.06em; color: #C9BEFF; }
+
+.ig-controles { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+.ig-controles button { all: unset; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; color: var(--cor-nevoa); }
+.ig-controles button:focus-visible { outline: 2px solid var(--cor-nevoa); outline-offset: 3px; }

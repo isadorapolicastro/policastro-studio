@@ -8,7 +8,7 @@ import { IndiceHome } from '../components/IndiceProjetos'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const AnimacaoGiro = lazy(() => import('../components/AnimacaoGiro'))
+const AnimacaoIG = lazy(() => import('../components/AnimacaoIG'))
 
 const pessoas = [
   {
@@ -60,7 +60,7 @@ export default function Inicio() {
       <section className="home-hero" aria-labelledby="titulo-inicio">
         <div className="entra">
           <Suspense fallback={<div style={{ aspectRatio: '16 / 9', background: '#0B0B0C' }} />}>
-            <AnimacaoGiro />
+            <AnimacaoIG />
           </Suspense>
         </div>
         <h1 id="titulo-inicio" className="titulo-hero">
