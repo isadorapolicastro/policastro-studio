@@ -25,6 +25,7 @@ export type Projeto = {
   resumo?: string
   ficha?: [string, string][]
   miniatura?: string
+  banner?: { src: string; celular: string; alt: string }
   capa?: { imagem: string; alt: string; foto: Imagem }
   secoes?: Secao[]
 }
@@ -49,6 +50,7 @@ export const projetos: Projeto[] = [
       ['Formato', 'Cliente'],
     ],
     miniatura: k('capa.webp'),
+    banner: { src: k('banner.webp'), celular: k('banner-celular.webp'), alt: 'Kashi, Ayurveda e Yogaterapia: Um lugar de luz, cuidado e presença' },
     capa: {
       imagem: k('capa.webp'),
       alt: 'Capa do manual de uso de marca da Kashi: símbolo, nome, Ayurveda & Yogaterapia e a frase Um lugar de luz, cuidado e presença',
@@ -199,6 +201,7 @@ export const projetos: Projeto[] = [
       ['No ar', 'olynct.com.br'],
     ],
     miniatura: o('capa.webp'),
+    banner: { src: o('banner.webp'), celular: o('banner-celular.webp'), alt: 'OLYN Centro de Treinamento: Seu treino. Do seu jeito.' },
     capa: {
       imagem: o('capa.webp'),
       alt: 'Logo da OLYN Centro de Treinamento sobre azul-marinho',

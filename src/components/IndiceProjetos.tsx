@@ -14,10 +14,16 @@ function Nome({ p }: { p: Projeto }) {
   )
 }
 
-function Miniatura({ p, grande }: { p: Projeto; grande?: boolean }) {
-  const src = p.miniatura ?? p.capa?.foto.src
-  if (!src) return null
-  return <img className={`indice-mini${grande ? ' indice-mini--grande' : ''}`} src={src} alt="" aria-hidden="true" loading="lazy" />
+function Banner({ p }: { p: Projeto }) {
+  if (!p.banner) return null
+  return (
+    <span className="indice-banner">
+      <picture>
+        <source media="(max-width: 720px)" srcSet={p.banner.celular} />
+        <img src={p.banner.src} alt={p.banner.alt} loading="lazy" decoding="async" width={2400} height={720} />
+      </picture>
+    </span>
+  )
 }
 
 /** Home: linhas reduzidas que levam para a página Projetos. */
@@ -26,11 +32,13 @@ export function IndiceHome() {
     <div className="indice-lista">
       {projetos.map((p) =>
         p.disponivel ? (
-          <Link key={p.slug} to="/projetos" state={{ foco: p.slug }} className="indice-linha revela">
-            <span className="indice-num mono">P—{p.numero}</span>
-            <Nome p={p} />
-            <Miniatura p={p} grande />
-            <span className="indice-meta mono suave">{p.linhaIndice}</span>
+          <Link key={p.slug} to={`/projetos/${p.slug}`} className="indice-item revela">
+            <span className="indice-linha">
+              <span className="indice-num mono">P—{p.numero}</span>
+              <Nome p={p} />
+              <span className="indice-meta mono suave">{p.linhaIndice}<span className="indice-sinal" aria-hidden="true">→</span></span>
+            </span>
+            <Banner p={p} />
           </Link>
         ) : (
           <div key={p.slug} className="indice-linha indice-linha--off revela">
@@ -94,18 +102,20 @@ export function IndiceExpansivel({ inicial, foco }: { inicial?: string; foco?: s
             <h2 className="projeto-cabeca">
               <button
                 type="button"
-                className="indice-linha"
+                className="indice-item"
                 aria-expanded={estaAberto}
                 aria-controls={`painel-${p.slug}`}
                 onClick={() => alternar(p)}
               >
-                <span className="indice-num mono">P—{p.numero}</span>
-                <Nome p={p} />
-                {!estaAberto && <Miniatura p={p} />}
-                <span className="indice-meta mono suave">
-                  {p.linhaIndice}
-                  <span className="indice-sinal" aria-hidden="true">{estaAberto ? '−' : '+'}</span>
+                <span className="indice-linha">
+                  <span className="indice-num mono">P—{p.numero}</span>
+                  <Nome p={p} />
+                  <span className="indice-meta mono suave">
+                    {p.linhaIndice}
+                    <span className="indice-sinal" aria-hidden="true">{estaAberto ? '−' : '+'}</span>
+                  </span>
                 </span>
+                {!estaAberto && <Banner p={p} />}
               </button>
             </h2>
             <div

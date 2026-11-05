@@ -30,7 +30,8 @@ export default function Layout() {
   const { pathname } = useLocation()
   const anterior = useRef(pathname)
   useEffect(() => {
-    const dentroDeProjetos = anterior.current.startsWith('/projetos') && pathname.startsWith('/projetos')
+    // Dentro de Projetos, ou chegando a um projeto aberto, quem cuida da rolagem é a própria página.
+    const dentroDeProjetos = (anterior.current.startsWith('/projetos') && pathname.startsWith('/projetos')) || /^\/projetos\/.+/.test(pathname)
     anterior.current = pathname
     if (!dentroDeProjetos) window.scrollTo(0, 0)
   }, [pathname])
