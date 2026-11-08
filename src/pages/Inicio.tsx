@@ -23,7 +23,7 @@ const pessoas = [
     areas: 'Direção de arte / Branding / Design gráfico',
     foto: 'equipe/guilherme.webp',
     alt: 'Retrato de Guilherme Policastro de Assis sobre fundo azul-petróleo',
-    posicao: '50% 55%',
+    posicao: '50% 18%',
   },
 ]
 
