@@ -14,14 +14,16 @@ const pessoas = [
   {
     nome: ['Isadora', 'Policastro de Assis'],
     areas: 'UX/UI / Design de produto / Experiências digitais',
-    foto: '[Retrato · Isadora · flash direto]',
-    variante: 'marcador marcador--violeta',
+    foto: 'equipe/isadora.webp',
+    alt: 'Retrato de Isadora Policastro de Assis sobre fundo azul-petróleo',
+    posicao: '50% 28%',
   },
   {
     nome: ['Guilherme', 'Policastro de Assis'],
     areas: 'Direção de arte / Branding / Design gráfico',
-    foto: '[Retrato · Guilherme · flash direto]',
-    variante: 'marcador',
+    foto: 'equipe/guilherme.webp',
+    alt: 'Retrato de Guilherme Policastro de Assis sobre fundo azul-petróleo',
+    posicao: '50% 55%',
   },
 ]
 
@@ -78,7 +80,7 @@ export default function Inicio() {
         <div className="dupla-grade">
           {pessoas.map((p) => (
             <article key={p.nome[0]} className="pessoa revela">
-              <div className={p.variante}>{p.foto}</div>
+              <img className="pessoa-foto" src={`${import.meta.env.BASE_URL}${p.foto}`} alt={p.alt} width={900} height={1200} loading="lazy" decoding="async" style={{ objectPosition: p.posicao }} />
               <h3>{p.nome[0]}<br />{p.nome[1]}</h3>
               <p className="mono suave">{p.areas}</p>
             </article>
