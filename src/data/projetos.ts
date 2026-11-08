@@ -46,7 +46,6 @@ export const projetos: Projeto[] = [
     ficha: [
       ['Tipo', 'Identidade visual e uso de marca'],
       ['Segmento', 'Ayurveda e yogaterapia'],
-      ['Nosso papel', '[A confirmar]'],
       ['Formato', 'Cliente'],
     ],
     miniatura: k('capa.webp'),
@@ -183,10 +182,9 @@ export const projetos: Projeto[] = [
       },
     ],
   },
-  { slug: 'projeto-02', numero: '02', nome: ['[Projeto real 02]', ''], linhaIndice: 'Em preparação', disponivel: false },
   {
     slug: 'olyn',
-    numero: '03',
+    numero: '02',
     nome: ['Olyn', 'CT'],
     linhaIndice: 'Landing page · Centro de treinamento · Gravataí',
     disponivel: true,
@@ -196,7 +194,6 @@ export const projetos: Projeto[] = [
     ficha: [
       ['Tipo', 'Landing page'],
       ['Segmento', 'Centro de treinamento'],
-      ['Nosso papel', '[A confirmar]'],
       ['No ar', 'olynct.com.br'],
     ],
     miniatura: o('capa.webp'),

@@ -31,9 +31,10 @@ export default function Layout() {
   const anterior = useRef(pathname)
   useEffect(() => {
     // Dentro de Projetos, ou chegando a um projeto aberto, quem cuida da rolagem é a própria página.
+    const secaoDaHome = ['/servicos', '/estudio', '/contato'].includes(pathname)
     const dentroDeProjetos = (anterior.current.startsWith('/projetos') && pathname.startsWith('/projetos')) || /^\/projetos\/.+/.test(pathname)
     anterior.current = pathname
-    if (!dentroDeProjetos) window.scrollTo(0, 0)
+    if (!dentroDeProjetos && !secaoDaHome) window.scrollTo(0, 0)
   }, [pathname])
 
   return (
@@ -57,7 +58,6 @@ export default function Layout() {
         </main>
         <footer className="rodape mono suave">
           <span className="rodape-marca"><Simbolo altura={20} /> POLICASTROSTUDIO — Estúdio de design em Gravataí, RS</span>
-          <span>Instagram [a confirmar]</span>
         </footer>
       </div>
     </>

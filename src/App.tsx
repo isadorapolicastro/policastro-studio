@@ -11,9 +11,9 @@ export default function App() {
         <Route index element={<Inicio />} />
         <Route path="projetos" element={<Projetos />} />
         <Route path="projetos/:slug" element={<Projetos />} />
-        <Route path="servicos" element={<Pagina titulo="Serviços" />} />
-        <Route path="estudio" element={<Pagina titulo="Estúdio" />} />
-        <Route path="contato" element={<Pagina titulo="Contato" />} />
+        <Route path="servicos" element={<Inicio />} />
+        <Route path="estudio" element={<Inicio />} />
+        <Route path="contato" element={<Inicio />} />
         <Route path="*" element={<Pagina titulo="Página não encontrada" />} />
       </Route>
     </Routes>

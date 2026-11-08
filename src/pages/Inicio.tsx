@@ -1,5 +1,5 @@
-import { lazy, Suspense, useLayoutEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { lazy, Suspense, useEffect, useLayoutEffect, useRef } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import '../styles/home.css'
@@ -38,6 +38,17 @@ const servicos = [
 
 export default function Inicio() {
   const raiz = useRef<HTMLDivElement>(null)
+  const { pathname } = useLocation()
+
+  // O menu leva a seções desta página: Serviços, Estúdio (Quem faz) e Contato.
+  useEffect(() => {
+    const alvo = ({ '/servicos': 'servicos-titulo', '/estudio': 'quem-faz', '/contato': 'fale' } as Record<string, string>)[pathname]
+    if (!alvo) return
+    const id = window.setTimeout(() => {
+      document.getElementById(alvo)?.closest('section')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })
+    }, 60)
+    return () => window.clearTimeout(id)
+  }, [pathname])
 
   useLayoutEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -100,7 +111,7 @@ export default function Inicio() {
         <h2 id="servicos-titulo" className="rotulo-secao">// Serviços</h2>
         <div className="servicos-grade">
           {servicos.map((s, i) => (
-            <Link key={s} to="/servicos" className="servico revela" style={{ textDecoration: 'none' }}>
+            <Link key={s} to="/contato" className="servico revela" style={{ textDecoration: 'none' }}>
               <span className="codigo">S—0{i + 1}</span>
               <span className="nome">{s}</span>
             </Link>
@@ -115,8 +126,7 @@ export default function Inicio() {
       <section className="secao contato" aria-labelledby="fale">
         <h2 id="fale" className="revela">Fale<span>.</span></h2>
         <div className="contato-botoes">
-          <a href="#/contato" className="cheio">WhatsApp → [a confirmar]</a>
-          <a href="#/contato" className="vazado">E-mail → [a confirmar]</a>
+          <a href="mailto:isapolicastro.designer@gmail.com" className="cheio">Enviar e-mail →</a>
         </div>
       </section>
     </div>
